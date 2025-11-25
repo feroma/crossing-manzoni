@@ -7045,6 +7045,11 @@ h1, .h1 {
     h1, .h1 {
       font-size: 60px;
       line-height: 68px; } }
+  h1.text-white, h1#loadingScreen, .accordion h1.accordion-close, .category-button-list h1.category_btn.active, .h1.text-white, .gallery-section h3.h1, .h1#loadingScreen, .bordered-list h3.h1, .accordion .h1.accordion-close, .category-button-list .h1.category_btn.active {
+    text-shadow: 0px 0px 12px #1c1905; }
+
+.intro-section p {
+  text-shadow: 0px 0px 7px #1c1905; }
 
 .h1b, #booking-modal .custom-select {
   font-size: 24px;
@@ -7075,15 +7080,15 @@ h2, .h2 {
       line-height: 49px;
       margin-bottom: 38px; } }
 
-.h3, .phrase {
+h3, .h3, .phrase {
   font-size: 22px;
   line-height: 26px; }
   @media (min-width: 1360px) {
-    .h3, .phrase {
+    h3, .h3, .phrase {
       font-size: 24px;
       line-height: 32px; } }
   @media (min-width: 1918px) {
-    .h3, .phrase {
+    h3, .h3, .phrase {
       font-size: 32px;
       line-height: 42px; } }
 
@@ -7103,6 +7108,10 @@ h4, .h4 {
   font-size: 18px;
   line-height: 20px; }
   @media (min-width: 1360px) {
+    h4, .h4 {
+      font-size: 22px;
+      line-height: 28px; } }
+  @media (min-width: 1918px) {
     h4, .h4 {
       font-size: 24px;
       line-height: 32px; } }
@@ -7176,6 +7185,10 @@ h4, .h4 {
   .mb-xs-gutter {
     margin-bottom: 8px; } }
 
+@media (min-width: 1360px) {
+  .mb-lg-gutter {
+    margin-bottom: 8px; } }
+
 .list-unstyled {
   margin: 0;
   padding: 0;
@@ -7188,7 +7201,8 @@ h4, .h4 {
   color: rgba(255, 255, 255, 0.5); }
 
 .cat-box {
-  border-bottom: solid 1px rgba(255, 255, 255, 0.3); }
+  border-bottom: solid 1px rgba(255, 255, 255, 0.3);
+  min-height: 69px; }
 
 .grad-1, .header.main-header:before {
   background: linear-gradient(to bottom, rgba(36, 34, 32, 0.4), rgba(36, 34, 32, 0));
@@ -7704,10 +7718,6 @@ h4, .h4 {
   position: relative;
   width: 100%;
   height: 100%; }
-  .picture-wrapper.patina-1 {
-    background-color: #403F3C; }
-    .picture-wrapper.patina-1 img {
-      opacity: 0.75; }
   .picture-wrapper picture {
     display: block;
     width: 100%;
@@ -7760,6 +7770,12 @@ h4, .h4 {
       display: block;
       font-weight: bold;
       text-transform: uppercase; }
+
+.item-layout-hero .picture-wrapper picture {
+  height: 100vh; }
+
+.col-small .item-layout-hero .picture-wrapper picture {
+  height: 100%; }
 
 /**
 ====================LAYOUTS
@@ -7832,6 +7848,10 @@ h4, .h4 {
 .furniture-item img, .furniture-item svg {
   max-width: 100px;
   height: auto; }
+@media (max-width: 919.98px) {
+  .furniture-item img, .furniture-item svg {
+    max-height: 100px;
+    width: auto; } }
 
 .art-col {
   position: relative; }
@@ -8559,7 +8579,9 @@ section {
   padding: 30px; }
   @media (min-width: 680px) {
     .rating-item {
-      padding: 60px; } }
+      padding: 30px; } }
+  .rating-item p {
+    text-shadow: none !important; }
 
 .media-box {
   text-align: center; }
