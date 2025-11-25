@@ -1,0 +1,60 @@
+//html,
+//.application {
+//  overflow: hidden;
+//}
+//
+//body {
+//  overflow: hidden;
+//  margin: 0;
+//  padding: 0;
+//}
+
+
+
+html {
+
+  &.has-scroll-smooth {
+    overflow: hidden;
+
+    #js-scroll {
+      overflow: hidden;
+      box-sizing: border-box;
+      position: relative;
+      // height: 100vh;
+    }
+  }
+
+  &.has-scroll-dragging {
+    user-select: none;
+  }
+}
+
+body {
+  .has-scroll-smooth & {
+    overflow: hidden;
+
+  }
+}
+
+[data-scroll-container] {
+  .has-scroll-smooth & {
+    min-height: 100vh;
+  }
+
+  [data-scroll-direction="horizontal"] & {
+    height: 100vh;
+    display: inline-block;
+    white-space: nowrap;
+  }
+}
+
+[data-scroll-section] {
+  [data-scroll-direction="horizontal"] & {
+    display: inline-block;
+    vertical-align: top;
+    white-space: nowrap;
+    height: 100%;
+  }
+}
+
+

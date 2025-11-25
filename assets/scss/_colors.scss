@@ -1,0 +1,31 @@
+@mixin colors_classes(  $colors_map: $cc_colors) {
+  @each $color_name, $color_hex in $colors_map {
+    .bg-#{$color_name} {
+      background-color: $color_hex!important;
+    }
+    .text-#{$color_name}, .text-#{$color_name} > a
+    {
+      color: $color_hex!important;
+    }
+    .stroke-#{$color_name}
+    {
+      stroke: $color_hex!important;
+    }
+    .border-bottom-#{$color_name}
+    {
+      border-bottom: solid 1px $color_hex!important;
+    }
+    .hover-#{$color_name}
+    {
+
+      transition: all .4s;
+      &:hover{
+        text-decoration: none!important;
+        color: $color_hex!important;
+      }
+
+    }
+  }
+
+}
+@include colors_classes ();
