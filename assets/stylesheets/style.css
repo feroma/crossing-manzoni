@@ -7771,9 +7771,6 @@ h4, .h4 {
       font-weight: bold;
       text-transform: uppercase; }
 
-.item-layout-hero .picture-wrapper picture {
-  height: 100vh; }
-
 .col-small .item-layout-hero .picture-wrapper picture {
   height: 100%; }
 
