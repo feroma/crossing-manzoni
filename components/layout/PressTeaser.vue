@@ -9,7 +9,10 @@
       <div class="h4 mb-2 text-serif">
         {{item.title}}
       </div>
-    <a href="#" @click.prevent.stop="openMediaModal">
+    <a v-if="item.url" :href="item.url" target="_blank">
+      <arrow-label :label="cta_label"/>
+    </a>
+    <a v-else href="#" @click.prevent.stop="openMediaModal">
       <arrow-label :label="cta_label"/>
     </a>
 
