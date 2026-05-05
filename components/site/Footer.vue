@@ -80,12 +80,34 @@
 
             <div class="col-12 border-top py-2">
               <div class="text-center text-sm-right text-white pb-5 pb-sm-3">
-                Copyright Crossing Manzoni - All right reserved -  P.IVA.: 05950050871 - CIN: IT015146B4CBIQTWEY -
-                <nuxt-link to="privacy">
-                 Privacy policy
-                </nuxt-link>
+                Copyright Crossing Manzoni - All right reserved -  P.IVA.: 05950050871 - <nuxt-link to="privacy">
+                Privacy Policy
+              </nuxt-link>
+                - <a href="#" class="company-details-toggle" :class="{ opened: companyDetailsOpen }" @click="toggleCompanyDetails">Company Details </a>
               </div>
+              <div ref="companyDetails" class="company-details text-white text-right">
+                <p>
+                  <strong>Luxury House S.r.l.</strong><br>
+                  Via Villalba 2 – 95024 Acireale (CT)<br>
+                  REA - CT - 301284<br> Registro d'impresa Sud Est Sicilia<br>
+
+                </p>
+                <ul class="list-unstyled">
+
+
+
+<!--                  <li><strong>Crossing Manzoni:</strong> <span>CIN IT015146B4CBIQTWEY</span></li>-->
+                  <li><strong>Crossing Condotti:</strong> <span>CIN IT058091B4TGH49IP7</span></li>
+                  <li><strong>Crossing Corso:</strong> <span>CIN IT058091C2X4WJ8ECY</span></li>
+                  <li><strong>Casa Crossing:</strong> <span>CIN IT058091B4MWC5CQSF</span></li>
+<!--                  <li><strong>Crossing The Rock:</strong> <span>CIN IT087004B4DDUYF933</span></li>-->
+
+
+                </ul>
+
             </div>
+
+          </div>
 
           </div>
 
@@ -108,8 +130,8 @@ export default {
   name: "SiteFooter",
   data () {
     return {
-
-      show: false
+      show: false,
+      companyDetailsOpen: false
     }
   },
   computed: {
@@ -129,6 +151,30 @@ export default {
   methods: {
     toggleMenu(){
         this.$store.commit('TOGGLE_MENU')
+    },
+    toggleCompanyDetails(event) {
+      event.preventDefault()
+      this.companyDetailsOpen = !this.companyDetailsOpen
+
+      const element = this.$refs.companyDetails
+
+      if (this.companyDetailsOpen) {
+        // Apri accordion
+        gsap.to(element, {
+          height: 'auto',
+          opacity: 1,
+          duration: 0.3,
+          ease: 'power2.out'
+        })
+      } else {
+        // Chiudi accordion
+        gsap.to(element, {
+          height: 0,
+          opacity: 0,
+          duration: 0.3,
+          ease: 'power2.in'
+        })
+      }
     }
   },
   props: {},
